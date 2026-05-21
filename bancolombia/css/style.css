@@ -1,0 +1,318 @@
+/* ===== BANCOLOMBIA PORTAL — Identidad visual oficial ===== */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    --amarillo: #FFD100;
+    --amarillo-dark: #E6BC00;
+    --negro: #1A1A1A;
+    --gris-oscuro: #2D2D2D;
+    --gris-medio: #6B6B6B;
+    --gris-claro: #F5F5F5;
+    --blanco: #FFFFFF;
+    --verde: #28a745;
+    --rojo: #dc3545;
+    --sombra: 0 2px 12px rgba(0,0,0,0.10);
+    --radio: 10px;
+    --font: 'DM Sans', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: var(--font);
+    background: var(--gris-claro);
+    color: var(--negro);
+    font-size: 15px;
+    min-height: 100vh;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+    background: var(--negro);
+    padding: 0 32px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+.navbar-brand .logo-icon {
+    width: 36px; height: 36px;
+    background: var(--amarillo);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 16px; color: var(--negro);
+}
+.navbar-brand span {
+    color: var(--amarillo);
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: .3px;
+}
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.navbar-user {
+    color: #ccc;
+    font-size: 14px;
+}
+.navbar-user strong { color: var(--amarillo); }
+.btn-logout {
+    background: transparent;
+    border: 1px solid #555;
+    color: #ccc;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .2s;
+}
+.btn-logout:hover { border-color: var(--amarillo); color: var(--amarillo); }
+
+/* ── LAYOUT ── */
+.container { max-width: 1000px; margin: 0 auto; padding: 32px 20px; }
+.page-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--negro);
+}
+.page-sub {
+    font-size: 14px;
+    color: var(--gris-medio);
+    margin-bottom: 28px;
+}
+
+/* ── CARDS ── */
+.card {
+    background: var(--blanco);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 24px;
+    margin-bottom: 20px;
+}
+.card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gris-medio);
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    margin-bottom: 12px;
+}
+
+/* ── SALDO HERO ── */
+.saldo-hero {
+    background: var(--negro);
+    border-radius: var(--radio);
+    padding: 28px 24px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.saldo-hero::before {
+    content: '';
+    position: absolute; right: -30px; top: -30px;
+    width: 180px; height: 180px;
+    background: var(--amarillo);
+    border-radius: 50%;
+    opacity: .08;
+}
+.saldo-hero .label {
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 8px;
+}
+.saldo-hero .monto {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--amarillo);
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+.saldo-hero .cuenta-info {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.saldo-hero .info-item { font-size: 13px; color: #aaa; }
+.saldo-hero .info-item strong { color: var(--blanco); display: block; }
+
+/* ── ACCIONES RÁPIDAS ── */
+.acciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+}
+.accion-btn {
+    background: var(--blanco);
+    border: 2px solid transparent;
+    border-radius: var(--radio);
+    padding: 18px 14px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--negro);
+    box-shadow: var(--sombra);
+    transition: all .2s;
+    cursor: pointer;
+    display: block;
+}
+.accion-btn:hover {
+    border-color: var(--amarillo);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,209,0,.20);
+}
+.accion-btn .icono { font-size: 28px; margin-bottom: 8px; }
+.accion-btn .nombre { font-size: 13px; font-weight: 600; }
+
+/* ── TABLA DE MOVIMIENTOS ── */
+.tabla-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+thead th {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gris-medio);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 10px 12px;
+    border-bottom: 2px solid var(--gris-claro);
+}
+tbody td {
+    padding: 12px;
+    border-bottom: 1px solid var(--gris-claro);
+    font-size: 14px;
+    color: var(--negro);
+    vertical-align: middle;
+}
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: #fffbea; }
+.badge-debito  { color: var(--rojo);  font-weight: 600; }
+.badge-credito { color: var(--verde); font-weight: 600; }
+.badge-estado {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.badge-exitosa  { background: #d4edda; color: #155724; }
+.badge-rechazada { background: #f8d7da; color: #721c24; }
+.badge-pendiente { background: #fff3cd; color: #856404; }
+
+/* ── FORMULARIOS ── */
+.form-group { margin-bottom: 18px; }
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--negro);
+}
+input, select, textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: var(--font);
+    transition: border-color .2s;
+    background: var(--blanco);
+    color: var(--negro);
+}
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--amarillo);
+    box-shadow: 0 0 0 3px rgba(255,209,0,.15);
+}
+
+/* ── BOTONES ── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .2s;
+    font-family: var(--font);
+}
+.btn-primary {
+    background: var(--amarillo);
+    color: var(--negro);
+}
+.btn-primary:hover { background: var(--amarillo-dark); transform: translateY(-1px); }
+.btn-secondary {
+    background: var(--gris-claro);
+    color: var(--negro);
+    border: 1.5px solid #ddd;
+}
+.btn-secondary:hover { background: #e8e8e8; }
+.btn-danger { background: var(--rojo); color: var(--blanco); }
+.btn-full { width: 100%; justify-content: center; }
+
+/* ── MENSAJES ── */
+.msg { padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; font-size: 14px; }
+.msg-exito { background: #d4edda; color: #155724; border-left: 4px solid #28a745; }
+.msg-error { background: #f8d7da; color: #721c24; border-left: 4px solid #dc3545; }
+.msg-info  { background: #d1ecf1; color: #0c5460; border-left: 4px solid #17a2b8; }
+
+/* ── LOGIN PAGE ── */
+.login-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--negro);
+}
+.login-box {
+    background: var(--blanco);
+    border-radius: 16px;
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.4);
+}
+.login-logo {
+    text-align: center;
+    margin-bottom: 28px;
+}
+.login-logo .circle {
+    width: 64px; height: 64px;
+    background: var(--amarillo);
+    border-radius: 16px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 28px; font-weight: 800; color: var(--negro);
+    margin-bottom: 10px;
+}
+.login-logo h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--negro);
+}
+.login-logo p { font-size: 13px; color: var(--gris-medio); margin-top: 2px; }
+
+/* ── FILTROS ── */
+.filtros {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+.filtros .form-group { margin-bottom: 0; flex: 1; min-width: 140px; }

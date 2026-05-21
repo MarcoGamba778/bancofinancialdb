@@ -1,0 +1,246 @@
+/* ===== NEQUI PORTAL — Identidad visual morado #5C0080 ===== */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+    --morado: #5C0080;
+    --morado-light: #7B00A8;
+    --morado-pale: #F3E8FA;
+    --rosa: #E91E8C;
+    --rosa-pale: #FCE4F3;
+    --blanco: #FFFFFF;
+    --gris-bg: #F7F0FC;
+    --gris-texto: #4A4A4A;
+    --gris-suave: #9B9B9B;
+    --verde: #00C47A;
+    --rojo: #E84040;
+    --sombra: 0 2px 14px rgba(92,0,128,.10);
+    --radio: 16px;
+    --font: 'Nunito', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: var(--font);
+    background: var(--gris-bg);
+    color: var(--gris-texto);
+    min-height: 100vh;
+    font-size: 15px;
+}
+
+/* ── HEADER ── */
+.header {
+    background: linear-gradient(135deg, var(--morado) 0%, var(--morado-light) 100%);
+    padding: 0 28px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-brand {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+}
+.header-brand .n-icon {
+    width: 38px; height: 38px;
+    background: var(--rosa);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 800; color: white;
+}
+.header-brand span { color: white; font-weight: 800; font-size: 20px; }
+.header-right { display: flex; align-items: center; gap: 14px; }
+.header-user { font-size: 14px; color: rgba(255,255,255,.8); }
+.header-user strong { color: white; }
+.btn-logout {
+    background: rgba(255,255,255,.15);
+    border: 1px solid rgba(255,255,255,.3);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .2s;
+    font-family: var(--font);
+}
+.btn-logout:hover { background: rgba(255,255,255,.25); }
+
+/* ── LAYOUT ── */
+.container { max-width: 960px; margin: 0 auto; padding: 28px 20px; }
+.page-title { font-size: 22px; font-weight: 800; margin-bottom: 4px; color: var(--morado); }
+.page-sub { font-size: 14px; color: var(--gris-suave); margin-bottom: 24px; }
+
+/* ── CARDS ── */
+.card {
+    background: var(--blanco);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 22px;
+    margin-bottom: 18px;
+}
+.card-title {
+    font-size: 12px; font-weight: 700;
+    color: var(--gris-suave);
+    text-transform: uppercase;
+    letter-spacing: .7px;
+    margin-bottom: 14px;
+}
+
+/* ── HERO SALDO ── */
+.saldo-hero {
+    background: linear-gradient(135deg, var(--morado) 0%, var(--morado-light) 60%, var(--rosa) 100%);
+    border-radius: var(--radio);
+    padding: 28px 24px;
+    margin-bottom: 18px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+.saldo-hero::after {
+    content: 'N';
+    position: absolute; right: -10px; bottom: -20px;
+    font-size: 120px; font-weight: 900;
+    color: rgba(255,255,255,.06);
+    font-family: var(--font);
+}
+.saldo-hero .label { font-size: 13px; opacity: .8; margin-bottom: 8px; }
+.saldo-hero .monto { font-size: 38px; font-weight: 800; margin-bottom: 18px; letter-spacing: -1px; }
+.saldo-hero .celular { font-size: 14px; opacity: .8; }
+
+/* ── ACCIONES ── */
+.acciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+.accion-btn {
+    background: white;
+    border: 2px solid transparent;
+    border-radius: var(--radio);
+    padding: 18px 12px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--morado);
+    box-shadow: var(--sombra);
+    transition: all .2s;
+    cursor: pointer;
+    display: block;
+}
+.accion-btn:hover {
+    border-color: var(--rosa);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(233,30,140,.18);
+}
+.accion-btn .icono { font-size: 28px; margin-bottom: 8px; }
+.accion-btn .nombre { font-size: 12px; font-weight: 700; }
+
+/* ── BOLSILLOS ── */
+.bolsillo-card {
+    background: linear-gradient(135deg, var(--morado-pale) 0%, var(--rosa-pale) 100%);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 10px;
+}
+.bolsillo-card .nombre { font-weight: 700; font-size: 15px; color: var(--morado); }
+.bolsillo-card .saldo  { font-size: 20px; font-weight: 800; color: var(--morado); margin: 6px 0; }
+.bolsillo-card .meta   { font-size: 12px; color: var(--gris-suave); }
+.bolsillo-progress { height: 6px; background: rgba(92,0,128,.15); border-radius: 3px; margin-top: 8px; overflow: hidden; }
+.bolsillo-fill { height: 100%; background: var(--rosa); border-radius: 3px; }
+
+/* ── TABLA ── */
+.tabla-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+thead th {
+    text-align: left;
+    font-size: 11px; font-weight: 700;
+    color: var(--gris-suave);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 8px 12px;
+    border-bottom: 2px solid var(--gris-bg);
+}
+tbody td {
+    padding: 12px;
+    border-bottom: 1px solid var(--gris-bg);
+    font-size: 14px;
+    vertical-align: middle;
+}
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: var(--morado-pale); }
+.badge-debito  { color: var(--rojo);  font-weight: 700; }
+.badge-credito { color: var(--verde); font-weight: 700; }
+.badge-estado { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+.badge-exitosa   { background: #d4f5e9; color: #006b3c; }
+.badge-rechazada { background: #fde8e8; color: #9e0000; }
+.badge-pendiente { background: #fff5cc; color: #7a5800; }
+
+/* ── FORMS ── */
+.form-group { margin-bottom: 16px; }
+label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--gris-texto); }
+input, select, textarea {
+    width: 100%; padding: 12px 14px;
+    border: 1.5px solid #e0d0ea;
+    border-radius: 10px;
+    font-size: 14px; font-family: var(--font);
+    background: white; color: var(--gris-texto);
+    transition: border-color .2s;
+}
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--rosa);
+    box-shadow: 0 0 0 3px rgba(233,30,140,.12);
+}
+
+/* ── BOTONES ── */
+.btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 22px; border: none; border-radius: 10px;
+    font-size: 14px; font-weight: 700; cursor: pointer;
+    text-decoration: none; transition: all .2s;
+    font-family: var(--font);
+}
+.btn-primary { background: var(--morado); color: white; }
+.btn-primary:hover { background: var(--morado-light); transform: translateY(-1px); }
+.btn-rosa { background: var(--rosa); color: white; }
+.btn-rosa:hover { background: #c71079; }
+.btn-secondary { background: var(--gris-bg); color: var(--morado); border: 1.5px solid #e0d0ea; }
+.btn-secondary:hover { background: var(--morado-pale); }
+.btn-danger { background: var(--rojo); color: white; }
+.btn-full { width: 100%; justify-content: center; }
+
+/* ── MENSAJES ── */
+.msg { padding: 12px 16px; border-radius: 10px; margin-bottom: 16px; font-size: 14px; font-weight: 600; }
+.msg-exito { background: #d4f5e9; color: #006b3c; border-left: 4px solid #00C47A; }
+.msg-error { background: #fde8e8; color: #9e0000; border-left: 4px solid #E84040; }
+.msg-info  { background: var(--morado-pale); color: var(--morado); border-left: 4px solid var(--rosa); }
+
+/* ── LOGIN ── */
+.login-wrap {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--morado) 0%, #A000D0 100%);
+    display: flex; align-items: center; justify-content: center;
+}
+.login-box {
+    background: white; border-radius: 24px;
+    padding: 40px 36px; width: 100%; max-width: 400px;
+    box-shadow: 0 24px 64px rgba(92,0,128,.35);
+}
+.login-logo { text-align: center; margin-bottom: 28px; }
+.login-logo .n-circle {
+    width: 72px; height: 72px;
+    background: linear-gradient(135deg, var(--morado), var(--rosa));
+    border-radius: 20px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 34px; font-weight: 800; color: white; margin-bottom: 12px;
+}
+.login-logo h2 { font-size: 22px; font-weight: 800; color: var(--morado); }
+.login-logo p  { font-size: 13px; color: var(--gris-suave); margin-top: 2px; }
+
+/* ── FILTROS ── */
+.filtros { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 20px; }
+.filtros .form-group { margin-bottom: 0; flex: 1; min-width: 140px; }
